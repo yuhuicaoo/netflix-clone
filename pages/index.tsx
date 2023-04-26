@@ -2,6 +2,7 @@ import { modalState } from "@/atoms/modalAtom";
 import Banner from "@/components/Banner";
 import Header from "@/components/Header";
 import Modal from "@/components/Modal";
+import Plans from "@/components/Plans";
 import Row from "@/components/Row";
 import useAuth from "@/hooks/useAuth";
 import { Movie } from "@/typings";
@@ -32,8 +33,11 @@ const Home = ({
 }: Props) => {
   const { loading } = useAuth();
   const showModal = useRecoilValue(modalState);
+  const sbuscription = false
 
-  if (loading) return null;
+  if (loading || sbuscription === null) return null;
+
+  if (!sbuscription) return <Plans />
 
   return (
     <div
