@@ -6,7 +6,7 @@ import { DocumentData } from "firebase/firestore";
 
 interface Props {
   // when using firebase
-  movies: Movie | DocumentData[]
+  movies: Movie[] | DocumentData[]
   title: string;
 }
 
